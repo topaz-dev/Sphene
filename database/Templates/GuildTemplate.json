@@ -1,0 +1,12 @@
+{
+  "idGuild":
+    "PRIMARYKEY_INTEGER",
+  "WelcomeMsg":
+    "TEXT",
+  "QuitMsg":
+    "TEXT",
+  "WelcomeRole":
+    "TEXT",
+  "Parametre":
+    "INTEGER"
+}
