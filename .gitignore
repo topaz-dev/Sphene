@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Autres
+help/cogs.txt
+help/help.txt
