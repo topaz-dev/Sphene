@@ -1,12 +1,18 @@
 {
   "idGuild":
     "PRIMARYKEY_INTEGER",
+  "Lang":
+    "TEXT",
   "WelcomeMsg":
     "TEXT",
   "QuitMsg":
     "TEXT",
   "WelcomeRole":
     "TEXT",
-  "Parametre":
+  "Param_WelcomeMsg":
+    "INTEGER",
+  "Param_QuitMsg":
+    "INTEGER",
+  "Param_TwitchNotif":
     "INTEGER"
 }

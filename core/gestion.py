@@ -6,7 +6,7 @@ PREFIX = open("core/prefix.txt", "r").read().replace("\n", "")
 client = Bot(command_prefix = "{0}".format(PREFIX))
 
 rolesID = [[417451897729843223], [417451897729843223, 417451604141277185], [417451897729843223, 417451604141277185, 423606460908306433]]
-guildID = [634317171496976395, 417445502641111051, 640507787494948865, 478003352551030796, 129364058901053440] # Get Gems | Bastion | Bastion Twitch | Test | TopazDev
+guildID = [690939984399827024, 417445502641111051, 129364058901053440] # Get Gems | Bastion | TopazDev
 
 
 def permission(ctx):
@@ -15,6 +15,38 @@ def permission(ctx):
         if ctx.guild.id in guildID and role.permissions.administrator:
             return True
     return False
+
+
+def MEFI(msg, member):
+    msg = MEF(msg, "{mention}", str(member.mention))
+    msg = MEF(msg, "{name}", str(member.name))
+    msg = MEF(msg, "{id}", str(member.id))
+    msg = MEF(msg, "{guild}", str(member.guild.name))
+    msg = MEF(msg, "{IDguild}", str(member.guild.id))
+    msg = MEF(msg, "{everyone}", "@everyone")
+    msg = MEF(msg, "{here}", "@here")
+    msg = MEF(msg, "\\n", "\n")
+    return msg
+
+
+def MEF(msg, source, destination):
+    if type(msg) is dict:
+        for k in msg.keys():
+            if type(msg[k]) is str:
+                msg[k] = msg[k].replace(source, destination)
+            else:
+                MEF(msg[k], source, destination)
+    elif type(msg) is list:
+        for x in range(0, len(msg)):
+            if type(msg[x]) is str:
+                msg[x] = msg[x].replace(source, destination)
+            else:
+                MEF(msg[x], source, destination)
+    elif type(msg) is int:
+        pass
+    else:
+        msg = msg.replace(source, destination)
+    return msg
 
 
 class Gestion(commands.Cog):

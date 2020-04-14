@@ -173,7 +173,7 @@ def checkField():
 # -------------------------------------------------------------------------------
 def new(ID, nameDB):
     """
-    Permet d'ajouter un nouveau joueur à la base de donnée en fonction de son ID.
+    Permet d'ajouter un nouveau serveur à la base de donnée en fonction de son ID.
 
     ID: int de l'ID du serveur
     """
@@ -187,7 +187,9 @@ def new(ID, nameDB):
         for x in t:
             if x != "id{}".format(nameDB) and x != "ID":
                 data += ", {}".format(x)
-                if "INTEGER" in t[x]:
+                if t == "Lang":
+                    values += ", 'FR'"
+                elif "INTEGER" in t[x]:
                     values += ", 0"
                 else:
                     values += ", NULL"
