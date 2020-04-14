@@ -55,15 +55,15 @@ class Gestion(commands.Cog):
         self.bot = bot
         return
 
-    @commands.command(pass_context=True)
-    async def show_perm(self, ctx):
-        """Montre les permissions et leur valeurs"""
-        msg = "Voici tes roles :```"
-        roles = ctx.author.roles
-        for role in roles:
-            msg += "~ {} à pour valeur :{}\n".format(role.name, role.permissions.value)
-        msg += "```"
-        await ctx.channel.send(msg)
+    # @commands.command(pass_context=True)
+    # async def show_perm(self, ctx):
+    #     """Montre les permissions et leur valeurs"""
+    #     msg = "Voici tes roles :```"
+    #     roles = ctx.author.roles
+    #     for role in roles:
+    #         msg += "~ {} à pour valeur :{}\n".format(role.name, role.permissions.value)
+    #     msg += "```"
+    #     await ctx.channel.send(msg)
 
     @commands.command(pass_context=True)
     async def supp(self, ctx, nb):

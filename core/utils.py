@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import bot
+from languages import lang
+from database import SQLite as sql
 
 client = discord.Client()
 VERSION = open("core/version.txt").read().replace("\n", "")
@@ -16,7 +18,8 @@ class Utils(commands.Cog):
             """
             Permet d'avoir la version du bot.
             """
-            msg = "Je suis en version : **" + str(VERSION) + "**."
+            langue = sql.valueAtNumber(ctx.guild.id, "Lang", "Guild")
+            msg = lang.forge_msg(langue, "Utils", [VERSION], False, 0)
             await ctx.channel.send(msg)
 
     @commands.command(pass_context=True)
@@ -24,7 +27,8 @@ class Utils(commands.Cog):
             """
             Permet d'avoir le site de bastion.
             """
-            msg = "Le site est : **http://sphene.topazdev.fr/**."
+            langue = sql.valueAtNumber(ctx.guild.id, "Lang", "Guild")
+            msg = lang.forge_msg(langue, "Utils", ["http://sphene.topazdev.fr/"], False, 1)
             await ctx.channel.send(msg)
 
     @commands.command(pass_context=True)
@@ -40,7 +44,8 @@ class Utils(commands.Cog):
             """
             Permet d'avoir le lien du github.
             """
-            msg = "Le github du Bot :arrow_right: **https://github.com/topaz-dev/Sphene**."
+            langue = sql.valueAtNumber(ctx.guild.id, "Lang", "Guild")
+            msg = lang.forge_msg(langue, "Utils", ["https://github.com/topaz-dev/Sphene"], False, 2)
             await ctx.channel.send(msg)
 
 

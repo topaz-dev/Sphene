@@ -1,0 +1,17 @@
+{
+  "WarningMsg":
+    [
+      "Aucune données n'a été trouvée!"
+    ],
+  "DefaultMsg":
+    [
+      "Bienvenue {0} sur {1}",
+      "**{0}** nous a quitté, pourtant si jeune..."
+    ],
+  "Utils":
+    [
+      "Je suis en version : **{0}**.",
+      "Le site est : **{0}**.",
+      "Le GitHub du bot :arrow_right: **{0}**."
+    ]
+}
