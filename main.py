@@ -6,6 +6,7 @@ from datetime import datetime
 
 from database import SQLite as sql
 from core import welcome as wel
+from multimedia import notification_loop as notifL
 
 # initialisation des variables.
 DEFAUT_PREFIX = "!"
@@ -39,6 +40,7 @@ async def on_ready():
     elif "type" in flag:
         print("SQL >> Un ou plusieurs type ont été modifié sur la DB.")
     print('------\n')
+    await notifL.load(client)
 
 ####################### Commande help.py #######################
 
@@ -80,9 +82,13 @@ async def on_member_remove(member):
         systemchannel = 0
     await systemchannel.send(wel.memberremove(member))
 
-###################### Commande gestion.py #####################
+###################### Gestion #####################
 
 client.load_extension('core.gestion')
+
+###################### Multimedia #####################
+
+client.load_extension('multimedia.notification')
 
 ####################### Lancemement du bot ######################
 
