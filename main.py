@@ -6,7 +6,7 @@ from datetime import datetime
 
 from database import SQLite as sql
 from core import welcome as wel
-from multimedia import notification_loop as notifL
+from multimedia import notification as notif
 
 # initialisation des variables.
 DEFAUT_PREFIX = "!"
@@ -40,7 +40,7 @@ async def on_ready():
     elif "type" in flag:
         print("SQL >> Un ou plusieurs type ont été modifié sur la DB.")
     print('------\n')
-    await notifL.load(client)
+    await notif.load(client)
 
 ####################### Commande help.py #######################
 

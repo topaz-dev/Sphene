@@ -1,7 +1,15 @@
 {
   "WarningMsg":
     [
-      "No data was found!"
+      "No data was found!",
+      "You don't meet the conditions.",
+      "Incorrectly filled order"
+    ],
+  "lang":
+    [
+      "Language changed successfuly !",
+      "Language not supported.",
+      "Available languages: \n• English (EN)\n• Français (FR)"
     ],
   "DefaultMsg":
     [
@@ -13,5 +21,62 @@
       "I'm in version: **{0}**.",
       "The website is: **{0}**.",
       "The Github of the bot:arrow_right: **{0}**."
-    ]
+    ],
+  "Gestion":
+    [
+      "{0} messages have been deleted!",
+      "You cannot delete more than {0} messages at a time."
+    ],
+  "Notification":
+    [
+      "You are currently receiving notifications for the following channels:",
+      "This discord channel hasn't been checked yet.",
+      "You have not added any twitch channels.",
+      "Since your notifications, there's currently one live feed.",
+      "Since your notifications, there's currently a live feed.",
+      "There's no live feed.",
+      "The name must not contain any special characters.",
+      "{0} is not currently in your notifications.",
+      "{0} has been added to your notifications.",
+      "{0} is already in your notifications.",
+      "Channel added!",
+      "This channel has already been added!",
+      "Channel deleted!",
+      "Channel already deleted or never added.",
+      "Removed {0}."
+    ],
+  "Help":
+    {
+      "help":
+        [
+          "List of all commands that can be used with the prefix **{0}**",
+          "Available orders",
+          "Main modules",
+          "Get Gems modules"
+        ],
+      "utils":
+        [
+          ": Allows to have the version of the bot.",
+          ": Allows you to have the website.",
+          ": PONG",
+          ": Allows to have the link of the github."
+        ],
+      "gestion":
+        [
+          ": Shows permissions and values",
+          "**[number]** : Deletes [number] of messages in the channel",
+          "**{language}** : Allows you to change the language for a server."
+        ],
+      "notification":
+        [
+          ": Displays list of notifications",
+          ": Displays number of live feeds",
+          ": Allows you to remove a stream of notifications",
+          ": Add a twitch feed to channel notifications",
+          ": Add a channel to the bot",
+          ": Delete the channel from the bot",
+          ": Add a user to the checklist.",
+          ": Delete a user from the checklist."
+        ]
+    }
 }

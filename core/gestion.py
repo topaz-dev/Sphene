@@ -1,18 +1,17 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
+from database import SQLite as sql
+from languages import lang
 
 PREFIX = open("core/prefix.txt", "r").read().replace("\n", "")
 client = Bot(command_prefix = "{0}".format(PREFIX))
-
-rolesID = [[417451897729843223], [417451897729843223, 417451604141277185], [417451897729843223, 417451604141277185, 423606460908306433]]
-guildID = [690939984399827024, 417445502641111051, 129364058901053440] # Get Gems | Bastion | TopazDev
 
 
 def permission(ctx):
     roles = ctx.author.roles
     for role in roles :
-        if ctx.guild.id in guildID and role.permissions.administrator:
+        if role.permissions.administrator:
             return True
     return False
 
@@ -57,7 +56,7 @@ class Gestion(commands.Cog):
 
     # @commands.command(pass_context=True)
     # async def show_perm(self, ctx):
-    #     """Montre les permissions et leur valeurs"""
+    #     """0"""
     #     msg = "Voici tes roles :```"
     #     roles = ctx.author.roles
     #     for role in roles:
@@ -67,20 +66,42 @@ class Gestion(commands.Cog):
 
     @commands.command(pass_context=True)
     async def supp(self, ctx, nb):
-        """**[nombre]** | Supprime [nombre] de message dans le channel """
+        """1"""
+        ID = ctx.guild.id
+        langue = sql.valueAtNumber(ID, "Lang", "Guild")
         suppMax = 40
         if permission(ctx):
             try :
                 nb = int(nb)
                 if nb <= suppMax :
                     await ctx.channel.purge(limit =nb)
-                    msg = '{0} messages on été éffacé !'.format(nb)
+                    msg = lang.forge_msg(langue, "Gestion", [nb], False, 0)
                 else:
-                    msg = "On ne peut pas supprimer plus de {} messages à la fois".format(suppMax)
+                    msg = lang.forge_msg(langue, "Gestion", [suppMax], False, 0)
             except ValueError:
-                msg = "Commande mal remplis"
+                msg = lang.forge_msg(langue, "WarningMsg", None, False, 2)
         else :
-            msg = "Tu ne remplis pas les conditions"
+            msg = lang.forge_msg(langue, "WarningMsg", None, False, 1)
+        await ctx.channel.send(msg)
+
+    @commands.command(pass_context=True)
+    async def lang(self, ctx, change_lang = None):
+        """2"""
+        ID = ctx.guild.id
+        langue = sql.valueAtNumber(ID, "Lang", "Guild")
+        if permission(ctx):
+            langlist = ["EN", "FR"]
+            change_lang = change_lang.upper()
+
+            if change_lang == "NONE":
+                msg = lang.forge_msg(langue, "lang", None, False, 2)
+            else:
+                if change_lang in langlist:
+                    msg = lang.forge_msg(change_lang, "lang", None, False, 0)
+                else:
+                    msg = lang.forge_msg(langue, "lang", None, False, 1)
+        else :
+            msg = lang.forge_msg(langue, "WarningMsg", None, False, 1)
         await ctx.channel.send(msg)
 
 

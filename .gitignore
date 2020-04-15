@@ -131,3 +131,7 @@ dmypy.json
 # Autres
 help/cogs.txt
 help/help.txt
+*.db
+multimedia/*.txt
+token/*.txt
+multimedia/local.json

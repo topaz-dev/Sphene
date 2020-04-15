@@ -1,4 +1,23 @@
 {
-  "channels": [],
-  "streams": []
+  "channels": [
+    {
+      "id": 559795899987918869,
+      "guild_name": "Bastion",
+      "channel_name": "twitch",
+      "added_by_name": "Azerxim",
+      "added_by_id": 129362501187010561,
+      "subscribed": [
+        "bastionautes"
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "login": "bastionautes",
+      "sent": "false",
+      "id": "425113214",
+      "status": "offline",
+      "game": ""
+    }
+  ]
 }

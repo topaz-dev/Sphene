@@ -188,7 +188,7 @@ def new(ID, nameDB):
             if x != "id{}".format(nameDB) and x != "ID":
                 data += ", {}".format(x)
                 if t == "Lang":
-                    values += ", 'FR'"
+                    values += ", 'EN'"
                 elif "INTEGER" in t[x]:
                     values += ", 0"
                 else:

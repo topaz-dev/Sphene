@@ -1,7 +1,15 @@
 {
   "WarningMsg":
     [
-      "Aucune données n'a été trouvée!"
+      "Aucune données n'a été trouvée!",
+      "Tu ne remplis pas les conditions.",
+      "Commande mal remplis"
+    ],
+  "lang":
+    [
+      "Langue modifiée avec succès.",
+      "Langue non prise en charge.",
+      "Langues disponible: \n• English (EN)\n• Français (FR)"
     ],
   "DefaultMsg":
     [
@@ -13,5 +21,62 @@
       "Je suis en version : **{0}**.",
       "Le site est : **{0}**.",
       "Le GitHub du bot :arrow_right: **{0}**."
-    ]
+    ],
+  "Gestion":
+    [
+      "{0} messages on été éffacé!",
+      "On ne peut pas supprimer plus de {0} messages à la fois."
+    ],
+  "Notification":
+    [
+      "Vous recevez actuellement des notifications pour les channels suivants:\n",
+      "Ce channel discord n'a pas encore été vérifié.",
+      "Vous n'avez ajouté aucun twitch channels.",
+      "Depuis vos notifications, il y a actuellement 1 flux en direct:\n\n",
+      "Depuis vos notifications, il y a actuellement {0} flux en direct:\n\n",
+      "Il n'y a pas de flux en direct.",
+      "Le nom ne doit pas contenir de caractères spéciaux.",
+      "{0} n'est pas actuellement dans vos notifications.",
+      "{0} a été ajouté à vos notifications.",
+      "{0} est déjà dans vos notifications.",
+      "Channel ajouté!",
+      "Ce channel a déjà été ajouté!",
+      "Channel supprimé!",
+      "Le channel a déjà été supprimée ou n'a jamais été ajoutée.",
+      "Enlevé {0}."
+    ],
+  "Help":
+    {
+      "help":
+        [
+          "Liste de toutes les fonctions utilisable avec le prefix **{0}**",
+          "Commandes disponible",
+          "Modules principaux",
+          "Modules Get Gems"
+        ],
+      "utils":
+        [
+          ": Permet d'avoir la version du bot.",
+          ": Permet d'avoir le site de bastion.",
+          ": PONG",
+          ": Permet d'avoir le lien du github."
+        ],
+      "gestion":
+        [
+          ": Montre les permissions et leur valeurs",
+          "**[nombre]** : Supprime [nombre] de message dans le channel",
+          "**{langue}** : Permet de changer la langue d'un serveur."
+        ],
+      "notification":
+        [
+          ": Affiche la liste des notifications",
+          ": Affiche le nombre de flux en direct",
+          ": Permet de retirer un flux des notifications",
+          ": Ajouter un flux twitch aux notifications de channel",
+          ": Ajouter un channel au bot",
+          ": Supprimer le channel du bot",
+          ": Ajouter un utilisateur à la liste vérifiée.",
+          ": Supprimer un utilisateur de la liste vérifiée."
+        ]
+    }
 }

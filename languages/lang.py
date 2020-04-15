@@ -35,16 +35,16 @@ def forge_msg(langue, nom_commande, liste_variables_texte = None, shuffle = Fals
         list_tmp = GDL[langue][nom_commande]
         msg_tmp = ran.choice(list_tmp)
 
+    msg_tmp = MEFL(msg_tmp, liste_variables_texte)
+    return msg_tmp
+
+
+def MEFL(msg, liste_variables_texte):
     if liste_variables_texte is None:
-        return msg_tmp
+        return msg
     else:
         i = 0
-        if number >= 0:
-            list_tmp = GDL[langue][nom_commande]
-            msg_tmp = list_tmp[int(number)]
-        else:
-            msg_tmp = GDL[langue][nom_commande]
         for x in liste_variables_texte:
-            msg_tmp = msg_tmp.replace("{" + str(i) + "}", str(x))
+            msg = msg.replace("{" + str(i) + "}", str(x))
             i += 1
-        return msg_tmp
+        return msg
