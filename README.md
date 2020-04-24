@@ -1,6 +1,8 @@
 # SPHENE
 
 Sphene est un bot discord personnalisable.
+Toute les fonctionnalités sont désactivées par défaut.
+Elles sont activable via l'interface web.
 
 ## Fonctionnalités
 
@@ -8,10 +10,13 @@ Sphene est un bot discord personnalisable.
 - Message de bienvenue lors de l'arrivé d'un nouveau membre.
 - Message d'aurevoir lors du départ d'un membre.
 
-#### Autres
+#### Rôles
 - Possibilité d'ajouter un role automatiquement au nouveau arrivant.
 
-## Personnalisation
+#### Twitch
+- Annonce de live twitch
+
+## Personnalisation (WIP)
 
 La personnalisation du bot s'effectue via une interface web.
 
